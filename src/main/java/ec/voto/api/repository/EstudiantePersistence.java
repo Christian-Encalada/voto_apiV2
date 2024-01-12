@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import ec.voto.api.domain.Estudiante;
 
-public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
+public interface EstudiantePersistence extends JpaRepository<Estudiante, Long> {
 
 }

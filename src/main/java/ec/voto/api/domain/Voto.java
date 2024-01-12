@@ -1,7 +1,8 @@
 package ec.voto.api.domain;
 
 import jakarta.persistence.*;
-
+import lombok.Getter;
+import lombok.Setter;
 @Getter
 @Setter
 @Entity
@@ -14,14 +15,14 @@ public class Voto {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "id_Estudiante")
+    @JoinColumn(name = "id_estudiante")
     private Estudiante estudiante;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_Candidato")
+    @JoinColumn(name = "id_candidato")
     private Candidato candidato;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "id_Mesa")
+    @JoinColumn(name = "id_mesa")
     private Mesa mesa;
 }

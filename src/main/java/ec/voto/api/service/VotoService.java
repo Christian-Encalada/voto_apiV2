@@ -2,19 +2,20 @@ package ec.voto.api.service;
 
 import java.util.Optional;
 
+import ec.voto.api.repository.VotoPersistence;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ec.voto.api.domain.Voto;
 import ec.voto.api.dto.VotoDTO;
-import ec.voto.api.repository.VotoRepository;
+
 
 @Service
 public class VotoService extends GenericCrudServiceImpl<Voto, VotoDTO> {
 
 	@Autowired
-	private VotoRepository repository;
+	private VotoPersistence repository;
 
 	private ModelMapper modelMapper = new ModelMapper();
 

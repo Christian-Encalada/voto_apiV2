@@ -2,19 +2,20 @@ package ec.voto.api.service;
 
 import java.util.Optional;
 
+import ec.voto.api.repository.MesaPersistence;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ec.voto.api.domain.Mesa;
 import ec.voto.api.dto.MesaDTO;
-import ec.voto.api.repository.MesaRepository;
+
 
 @Service
 public class MesaService extends GenericCrudServiceImpl<Mesa, MesaDTO> {
 
     @Autowired
-    private MesaRepository repository;
+    private MesaPersistence repository;
 
     private ModelMapper modelMapper = new ModelMapper();
 

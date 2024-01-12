@@ -1,7 +1,8 @@
 package ec.voto.api.domain;
 
 import jakarta.persistence.*;
-
+import lombok.Getter;
+import lombok.Setter;
 @Getter
 @Setter
 @Entity
@@ -14,6 +15,6 @@ public class Mesa {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "id_Curso")
+    @JoinColumn(name = "id_curso")
     private Curso curso;
 }
