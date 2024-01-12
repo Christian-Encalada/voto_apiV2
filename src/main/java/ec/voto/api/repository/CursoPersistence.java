@@ -1,9 +1,9 @@
 package ec.voto.api.repository;
 
-import ec.voto.api.domain.Curso;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CursoPersistence extends JpaRepository<Curso, Long> {
+import ec.voto.api.domain.Curso;
+
+public interface CursoRepository extends JpaRepository<Curso, Long> {
 
 }

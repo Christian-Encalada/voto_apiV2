@@ -2,8 +2,8 @@ package ec.voto.api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import ec.voto.api.domain.Mesa;
+import ec.voto.api.domain.Voto;
 
-public interface MesaRepository extends JpaRepository<Mesa, Long> {
+public interface VotoRepository extends JpaRepository<Voto, Long> {
 
 }

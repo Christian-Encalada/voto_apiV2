@@ -1,16 +1,11 @@
 package ec.voto.api.domain;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
-
 
 @Getter
 @Setter
 @Entity
 @Table(name = "estudiante")
-
 public class Estudiante {
 
     @Id
@@ -18,13 +13,9 @@ public class Estudiante {
     @Column(updatable = false, nullable = false)
     private Long id;
 
-    @Column(nullable = false)
-    private String nombre;
+    @Column(name = "nombre_Completo", nullable = false)
+    private String nombreCompleto;
 
     @Column(nullable = false)
-    private String apellido;
-
-    @ManyToOne
-    @JoinColumn(name = "id_curso", nullable = false)
-    private Curso curso;
+    private String parelelo;
 }

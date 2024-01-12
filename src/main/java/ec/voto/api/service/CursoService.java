@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 
 import ec.voto.api.domain.Curso;
 import ec.voto.api.dto.CursoDTO;
-import ec.voto.api.repository.CursoPersistence;
+import ec.voto.api.repository.CursoRepository;
 
 @Service
 public class CursoService extends GenericCrudServiceImpl<Curso, CursoDTO> {
 
     @Autowired
-    private CursoPersistence repository;
+    private CursoRepository repository;
 
     private ModelMapper modelMapper = new ModelMapper();
 
@@ -32,5 +32,4 @@ public class CursoService extends GenericCrudServiceImpl<Curso, CursoDTO> {
     public CursoDTO mapToDto(Curso domain) {
         return modelMapper.map(domain, CursoDTO.class);
     }
-
 }
