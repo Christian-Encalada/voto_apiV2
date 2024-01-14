@@ -12,4 +12,6 @@ public class MesaDTO {
     private Long id;
 
     private CursoDTO curso;
+
+
 }

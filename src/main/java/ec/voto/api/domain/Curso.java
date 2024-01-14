@@ -16,4 +16,6 @@ public class Curso {
 
     @Column(nullable = false)
     private String curso;
+
+
 }

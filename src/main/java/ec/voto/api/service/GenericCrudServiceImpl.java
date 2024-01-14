@@ -75,11 +75,11 @@ public abstract class GenericCrudServiceImpl<DOMAIN, DTO> implements GenericCrud
 		ExampleMatcher matcher = ExampleMatcher.matching().withIgnoreNullValues().withIgnorePaths("id");
 		List<DOMAIN> objList = repository.findAll(Example.of(domain, matcher));
 		return objList.stream().map(obj -> mapToDto(obj)).collect(Collectors.toList());
-	}
+}
 
-	@Override
-	public abstract DOMAIN mapToDomain(DTO dto);
+@Override
+public abstract DOMAIN mapToDomain(DTO dto);
 
-	@Override
+@Override
 	public abstract DTO mapToDto(DOMAIN domain);
 }
