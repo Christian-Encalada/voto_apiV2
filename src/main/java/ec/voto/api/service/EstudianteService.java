@@ -1,7 +1,9 @@
 package ec.voto.api.service;
 
+import java.util.List;
 import java.util.Optional;
 
+import ec.voto.api.domain.Voto;
 import ec.voto.api.repository.EstudiantePersistence;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +35,12 @@ public class EstudianteService extends GenericCrudServiceImpl<Estudiante, Estudi
 	public EstudianteDTO mapToDto(Estudiante domain) {
 		return modelMapper.map(domain, EstudianteDTO.class);
 	}
+
+	public List<Estudiante> buscarAsistencia(Boolean asistencia) {
+		List<Estudiante> entidad = repository.findByAsistencia(asistencia);
+		return entidad;
+	}
+
+
+
 }

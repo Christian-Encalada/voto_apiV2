@@ -1,5 +1,6 @@
 package ec.voto.api.v1;
 
+import ec.voto.api.dto.EstudianteDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -45,4 +46,15 @@ public class VotoController {
         dto.setId(id);
         return new ResponseEntity<>(new ApiResponseDTO<>(true, service.find(dto)), HttpStatus.OK);
     }
+
+    @GetMapping(value = "candidato/{nombreCandidato}", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Object> buscarCandidato(@Valid @PathVariable("nombreCandidato") String candidato) {
+        return new ResponseEntity<>(new ApiResponseDTO<>(true, service.buscarCandidato(candidato)), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "mesa/{buscarMesa}", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Object> buscarMesa(@Valid @PathVariable("buscarMesa") Long id) {
+        return new ResponseEntity<>(new ApiResponseDTO<>(true, service.buscarMesa(id)), HttpStatus.OK);
+    }
+
 }

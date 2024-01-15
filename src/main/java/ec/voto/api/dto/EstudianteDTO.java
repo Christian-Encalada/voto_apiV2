@@ -21,4 +21,6 @@ public class EstudianteDTO {
     private Curso curso;
 
     private Boolean asistencia;
+
+
 }

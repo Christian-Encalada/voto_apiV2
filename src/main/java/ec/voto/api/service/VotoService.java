@@ -1,5 +1,6 @@
 package ec.voto.api.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import ec.voto.api.repository.VotoPersistence;
@@ -19,7 +20,11 @@ public class VotoService extends GenericCrudServiceImpl<Voto, VotoDTO> {
 
 	private ModelMapper modelMapper = new ModelMapper();
 
-	@Override
+    public VotoService(VotoPersistence repository) {
+        this.repository = repository;
+    }
+
+    @Override
 	public Optional<Voto> find(VotoDTO dto) {
 		return repository.findById(dto.getId());
 	}
@@ -33,4 +38,19 @@ public class VotoService extends GenericCrudServiceImpl<Voto, VotoDTO> {
 	public VotoDTO mapToDto(Voto domain) {
 		return modelMapper.map(domain, VotoDTO.class);
 	}
+	public List<Voto> buscarCandidato(String candidato) {
+		List<Voto> entidad = repository.findByCandidato_NombreCandidato(candidato);
+		return entidad;
+	}
+
+	public List<Voto> buscarMesa(Long id) {
+		List<Voto> entidad = repository.findByMesa_Id(id);
+		return entidad;
+	}
+
+
+
+
+
 }
+

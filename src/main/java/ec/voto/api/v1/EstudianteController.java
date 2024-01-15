@@ -45,4 +45,10 @@ public class EstudianteController {
 		dto.setId(id);
 		return new ResponseEntity<>(new ApiResponseDTO<>(true, service.find(dto)), HttpStatus.OK);
 	}
+
+	@GetMapping(value = "asistencia/{siAsistio}", produces = { MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<Object> buscarAsistencia(@Valid @PathVariable("siAsistio") Boolean asistencia) {
+		return new ResponseEntity<>(new ApiResponseDTO<>(true, service.buscarAsistencia(asistencia)), HttpStatus.OK);
+	}
+
 }
