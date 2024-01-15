@@ -15,5 +15,5 @@ public class EstudianteDTO {
 
     private String nombreCompleto;
 
-    private String parelelo;
+    private String paralelo;
 }

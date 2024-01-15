@@ -1,5 +1,7 @@
 package ec.voto.api.v1;
 
+import ec.voto.api.dto.CursoDTO;
+import ec.voto.api.repository.VotoPersistence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -39,10 +41,18 @@ public class VotoController {
         return new ResponseEntity<>(new ApiResponseDTO<>(true, resultDTO), HttpStatus.CREATED);
     }
 
+    @DeleteMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> eliminar(@RequestBody VotoDTO votoDTO) {
+        VotoDTO resultDTO = service.delete(votoDTO);
+        return new ResponseEntity<>(new ApiResponseDTO<>(true, resultDTO), HttpStatus.CREATED);
+    }
+
     @GetMapping(value = "{id}/archivo/id", produces = { MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> buscarPorId(@Valid @PathVariable("id") long id) {
         VotoDTO dto = new VotoDTO();
         dto.setId(id);
         return new ResponseEntity<>(new ApiResponseDTO<>(true, service.find(dto)), HttpStatus.OK);
     }
+
+
 }

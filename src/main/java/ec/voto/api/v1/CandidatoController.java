@@ -1,5 +1,6 @@
 package ec.voto.api.v1;
 
+import ec.voto.api.dto.CursoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -36,6 +37,12 @@ public class CandidatoController {
 	@PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> actualizar(@RequestBody CandidatoDTO candidatoDTO) {
 		CandidatoDTO resultDTO = service.update(candidatoDTO);
+		return new ResponseEntity<>(new ApiResponseDTO<>(true, resultDTO), HttpStatus.CREATED);
+	}
+
+	@DeleteMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Object> eliminar(@RequestBody CandidatoDTO CandidatoDTO) {
+		CandidatoDTO resultDTO = service.delete(CandidatoDTO);
 		return new ResponseEntity<>(new ApiResponseDTO<>(true, resultDTO), HttpStatus.CREATED);
 	}
 

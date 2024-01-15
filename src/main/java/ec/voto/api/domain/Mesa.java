@@ -15,6 +15,6 @@ public class Mesa {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "id_curso")
+    @JoinColumn(name = "id_Curso")
     private Curso curso;
 }

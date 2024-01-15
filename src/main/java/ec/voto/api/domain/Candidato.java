@@ -17,6 +17,6 @@ public class Candidato {
     @Column(nullable = false)
     private String lista;
 
-    @Column(name = "nombre_candidato", nullable = false)
+    @Column(name = "nombre_Candidato", nullable = false)
     private String nombreCandidato;
 }

@@ -15,9 +15,9 @@ public class Estudiante {
     @Column(updatable = false, nullable = false)
     private Long id;
 
-    @Column(name = "nombre_completo", nullable = false)
+    @Column(name = "nombre_Completo", nullable = false)
     private String nombreCompleto;
 
     @Column(nullable = false)
-    private String parelelo;
+    private String paralelo;
 }

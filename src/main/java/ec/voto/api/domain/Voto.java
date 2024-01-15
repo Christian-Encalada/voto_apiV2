@@ -15,14 +15,14 @@ public class Voto {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "id_estudiante")
+    @JoinColumn(name = "id_Estudiante")
     private Estudiante estudiante;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_candidato")
+    @JoinColumn(name = "id_Candidato")
     private Candidato candidato;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "id_mesa")
+    @JoinColumn(name = "id_Mesa")
     private Mesa mesa;
 }
