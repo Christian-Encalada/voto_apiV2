@@ -19,5 +19,12 @@ public class Estudiante {
     private String nombreCompleto;
 
     @Column(nullable = false)
-    private String parelelo;
+    private String paralelo;
+
+    @Column(nullable = false)
+    private Boolean asistencia;
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "id_curso")
+    private Curso curso;
 }

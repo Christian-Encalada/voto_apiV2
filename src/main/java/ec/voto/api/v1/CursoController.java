@@ -12,13 +12,18 @@ import ec.voto.api.service.CursoService;
 
 import jakarta.validation.Valid;
 import java.util.List;
-
+import ec.voto.api.domain.Estudiante;
 @RestController
 @RequestMapping(value = { "/api/v1.0/curso" })
 public class CursoController {
 
 	@Autowired
 	private CursoService service;
+
+	@GetMapping("/{cursoId}/estudiantes")
+	public List<Estudiante> getEstudiantesPorCurso(@PathVariable Long cursoId) {
+		return service.getEstudiantesPorCurso(cursoId);
+	}
 
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> listar() {
@@ -51,4 +56,6 @@ public class CursoController {
 		dto.setId(id);
 		return new ResponseEntity<>(new ApiResponseDTO<>(true, service.find(dto)), HttpStatus.OK);
 	}
+
+
 }

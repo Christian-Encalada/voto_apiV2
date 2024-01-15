@@ -1,5 +1,6 @@
 package ec.voto.api.dto;
 
+import ec.voto.api.domain.Curso;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,5 +16,9 @@ public class EstudianteDTO {
 
     private String nombreCompleto;
 
-    private String parelelo;
+    private String paralelo;
+
+    private Curso curso;
+
+    private Boolean asistencia;
 }
